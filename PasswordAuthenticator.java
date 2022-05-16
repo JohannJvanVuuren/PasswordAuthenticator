@@ -32,8 +32,8 @@ public class PasswordAuthenticator {
        * Declaration and assignment of strings needed for the getPassword() method as
        * well as the variable that will store the successfully created password.
        */
-      String passwordRequestOne = "Please enter a passsword that contains at least one number";
-      String passwordRequestTwo = "Please confirm the password";
+      String PASSWORD_REQUEST_ONE = "Please enter a passsword that contains at least one number";
+      String PASSWORD_REQUEST_TWO = "Please confirm the password";
       String finalPassword = "";
 
       /*
@@ -41,9 +41,9 @@ public class PasswordAuthenticator {
        * and then writing the password to the "password.txt" using the
        * writePasswordToFile() method.
        */
-      String passwordOne = getUserInput(passwordRequestOne);
+      String passwordOne = getUserInput(PASSWORD_REQUEST_ONE);
       writePasswordToFile(passwordOne);
-      String passwordTwo = getUserInput(passwordRequestTwo);
+      String passwordTwo = getUserInput(PASSWORD_REQUEST_TWO);
       writePasswordToFile(passwordTwo);
 
       /*
@@ -106,8 +106,8 @@ public class PasswordAuthenticator {
        * variable will change to false and the loop will end.
        */
       if (tryAgain == true) {
-        String reenterPasswords = "Would you like to re-enter the password? (Y/N)";
-        String userChoice = getUserInput(reenterPasswords);
+        String REENTERPASSWORD = "Would you like to re-enter the password? (Y/N)";
+        String userChoice = getUserInput(REENTERPASSWORD);
         if (userChoice.equalsIgnoreCase("n")) {
           tryAgain = false;
         }
@@ -163,9 +163,9 @@ public class PasswordAuthenticator {
        * System.getProperty("file.separator") is to ensure the path will work across
        * Windows and Unix/Linux OSs.
        */
-      String fileToWriteTo = "password.txt";
+      String FILE_TO_WRITE_TO = "password.txt";
 
-      File targetFile = new File(fileToWriteTo);
+      File targetFile = new File(FILE_TO_WRITE_TO);
 
       /*
        * Creation of instances of FileWriter and Formatter which is needed to write
