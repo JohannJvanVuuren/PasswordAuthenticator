@@ -17,16 +17,10 @@ public class PasswordAuthenticator {
   public static void main(String[] args) {
 
     /*
-     * State variable to control whether the while loop is executed. This variable
-     * is updated at the end of the body of the while loop.
-     */
-    boolean tryAgain = true;
-
-    /*
      * While statement to allow user to try again if an attempt results in a
      * rejected password.
      */
-    while (tryAgain) {
+    while (true) {
 
       /*
        * Declaration and assignment of strings needed for the getPassword() method as
@@ -85,7 +79,7 @@ public class PasswordAuthenticator {
          * Updating of state variable of while loop to prevent further iterations
          * determined by the if statement at the end of the program.
          */
-        tryAgain = false;
+        break;
       }
 
       /*
@@ -101,16 +95,13 @@ public class PasswordAuthenticator {
       }
 
       /*
-       * Updating of the state variable "tryAgain" based on user choice gathered as
-       * user input using the getUserInput() method. If the user chooses "N", the
-       * variable will change to false and the loop will end.
+       * If the user chooses N, the loop will be broken out of by the break statement.
        */
-      if (tryAgain == true) {
-        String REENTERPASSWORD = "Would you like to re-enter the password? (Y/N)";
-        String userChoice = getUserInput(REENTERPASSWORD);
-        if (userChoice.equalsIgnoreCase("n")) {
-          tryAgain = false;
-        }
+
+      String REENTERPASSWORD = "Would you like to re-enter the password? (Y/N)";
+      String userChoice = getUserInput(REENTERPASSWORD);
+      if (userChoice.equalsIgnoreCase("n")) {
+        break;
       }
     }
   }
